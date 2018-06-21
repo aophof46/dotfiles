@@ -1,0 +1,19 @@
+shell bash
+startup_message off
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l] %{..Y} %m/%d %C%a "
+termcapinfo xterm ti@:te@
+activity "%C -> %n%f %t activity!"
+bell "%C -> %n%f %t bell!~"
+vbell_msg " *beep* "
+nonblock 1
+defnonblock 1
+termcapinfo xterm* ti@:te@
+
+bindkey -k k4 title # F4
+bindkey -k k5 prev # F5
+bindkey -k k6 next # F6
+bindkey -k k7 screen # F7
+bindkey -k k8 kill # F8
+bindkey -k k9 detach # F9
+bindkey -k k; quit # F10
