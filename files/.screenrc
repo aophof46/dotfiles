@@ -1,4 +1,5 @@
-shell bash
+# shell bash
+shell -$SHELL
 startup_message off
 hardstatus alwayslastline
 hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l] %{..Y} %m/%d %C%a "
