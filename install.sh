@@ -8,9 +8,11 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 
+# Make utilities available
+PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Symlinks
-ln -sfv "$DOTFILES_DIR/files/.profile" 
-ln -sfv "$DOTFILES_DIR/files/.screenrc"
+ln -sfv "$DOTFILES_DIR/files/.profile" ~
+ln -sfv "$DOTFILES_DIR/files/.screenrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/git/.gitignore_global" 
+ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~

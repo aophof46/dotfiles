@@ -41,8 +41,22 @@ else
   return
 fi
 
+# Make utilities available
+PATH="$DOTFILES_DIR/bin:$PATH"
+
 # Finally we can source the dotfiles (order matters)
 
 for DOTFILE in "$DOTFILES_DIR"/files/.{env,alias}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
+
+# Clean up
+unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
+
+# Export
+export DOTFILES_DIR
+
+
+
+
+
