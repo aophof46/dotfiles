@@ -26,6 +26,7 @@ apps=(
     ffmpeg
     git
     screen
+    vlc
 )
 
 brew install "${apps[@]}"
