@@ -17,3 +17,7 @@ ln -sfv "$DOTFILES_DIR/files/.screenrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
+
+# Package managers & packages
+
+. "$DOTFILES_DIR/install/brew.sh"
