@@ -20,11 +20,10 @@ apps=(
     powershell
     visual-studio-code
     dockutil
-
     vlc
 )
 
-brew install "${apps[@]}"
+brew install "${apps[@]}" --cask
 
 # Git comes with diff-highlight, but isn't in the PATH
-ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
+# ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
