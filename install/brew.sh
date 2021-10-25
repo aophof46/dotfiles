@@ -25,6 +25,7 @@ apps=(
     dockutil
     ffmpeg
     git
+    screen
 )
 
 brew install "${apps[@]}"
