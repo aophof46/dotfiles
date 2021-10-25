@@ -1,7 +1,8 @@
 
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-    
+if [ "$(echo $SHELL)" == "/bin/zsh" ]; then
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi   
 
 # Install packages
 apps=(
@@ -21,4 +22,4 @@ apps=(
 brew install "${apps[@]}" --cask
 
 # Git comes with diff-highlight, but isn't in the PATH
-# ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
+# sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
