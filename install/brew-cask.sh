@@ -2,13 +2,8 @@
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
     
-    
-    
-brew update
-brew upgrade
 
 # Install packages
-
 apps=(
     aerial
     arduino
