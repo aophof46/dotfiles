@@ -24,6 +24,7 @@ apps=(
     visual-studio-code
     dockutil
     ffmpeg
+    git
 )
 
 brew install "${apps[@]}"
