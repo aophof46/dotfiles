@@ -14,19 +14,26 @@ brew upgrade
 
 # Install packages
 apps=(
-    git
-    screen
     aerial
-    arduino
-    iterm2
-    sublime-text2
-    vmware-horizon-client
     android-studio
+    arduino
     balenaetcher
-    powershell
-    visual-studio-code
+    discord
     dockutil
+    git
+    htop
+    iterm2
+    mediahuman-audio-converter
+    powershell
+    screen
+    spotify
+    sublime-text2
+    ultimaker-cura
+    visual-studio-code
     vlc
+    vmware-horizon-client
+    vysor
+    wireshark
 )
 
 brew install "${apps[@]}" --cask
