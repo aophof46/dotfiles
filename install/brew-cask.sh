@@ -25,6 +25,7 @@ apps=(
     git
     htop
     iterm2
+    lastpass
     mediahuman-audio-converter
     powershell
     screen
