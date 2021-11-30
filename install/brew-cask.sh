@@ -2,6 +2,8 @@
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Use ZSH shell
+chsh -s /bin/zsh
 
 if [ "$(echo $SHELL)" == "/bin/zsh" ]; then
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
