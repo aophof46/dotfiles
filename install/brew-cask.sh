@@ -29,6 +29,7 @@ apps=(
     mediahuman-audio-converter
     powershell
     screen
+    slack
     spotify
     sublime-text2
     ultimaker-cura
