@@ -17,18 +17,21 @@ brew upgrade
 
 # Install packages
 apps=(
+    dockutil
+    git
+    htop
+    screen
+)
+
+casks=(
     aerial
     android-studio
     arduino
     balenaetcher
     discord
-    dockutil
-    git
-    htop
     iterm2
     mediahuman-audio-converter
     powershell
-    screen
     spotify
     sublime-text2
     ultimaker-cura
@@ -36,11 +39,12 @@ apps=(
     vlc
     vmware-horizon-client
     vysor
-    wireshark
-)
+    wireshark  
+    
 
-#brew install "${apps[@]}" --cask
 brew install "${apps[@]}"
+brew install "${casks[@]}" --cask
+
 
 # Git comes with diff-highlight, but isn't in the PATH
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
