@@ -39,6 +39,7 @@ apps=(
     wireshark
 )
 
+#brew install "${apps[@]}" --cask
 brew install "${apps[@]}" --cask
 
 # Git comes with diff-highlight, but isn't in the PATH
