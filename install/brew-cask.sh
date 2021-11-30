@@ -17,21 +17,17 @@ brew upgrade
 
 # Install packages
 apps=(
-    dockutil
-    git
-    htop
-    screen
-)
-
-casks=(
     aerial
     android-studio
     arduino
     balenaetcher
     discord
+    git
+    htop
     iterm2
     mediahuman-audio-converter
     powershell
+    screen
     spotify
     sublime-text2
     ultimaker-cura
@@ -39,10 +35,9 @@ casks=(
     vlc
     vmware-horizon-client
     vysor
-    wireshark  
-    )    
+    wireshark 
+)    
 
-brew install "${apps[@]}"
 brew install "${casks[@]}" --cask
 
 
