@@ -40,7 +40,7 @@ casks=(
     vmware-horizon-client
     vysor
     wireshark  
-    
+    )    
 
 brew install "${apps[@]}"
 brew install "${casks[@]}" --cask
