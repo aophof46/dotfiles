@@ -19,6 +19,7 @@ brew upgrade
 apps=(
     aerial
     android-studio
+    android-platform-tools
     arduino
     balenaetcher
     discord
@@ -37,7 +38,9 @@ apps=(
     vlc
     vmware-horizon-client
     vysor
-    wireshark 
+    webex
+    wireshark
+    zoom
 )    
 
 brew install "${casks[@]}" --cask
