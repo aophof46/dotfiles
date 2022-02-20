@@ -15,10 +15,10 @@ echo $DOTFILES_DIR
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Symlinks
-ln -sfv \$DOTFILES_DIR/files/.profile ~
-ln -sfv \$DOTFILES_DIR/files/.screenrc ~
-ln -sfv \$DOTFILES_DIR/git/.gitconfig ~
-ln -sfv \$DOTFILES_DIR/git/.gitignore_global ~
+ln -sfv $DOTFILES_DIR/files/.profile ~
+ln -sfv $DOTFILES_DIR/files/.screenrc ~
+ln -sfv $DOTFILES_DIR/git/.gitconfig ~
+ln -sfv $DOTFILES_DIR/git/.gitignore_global ~
 if [ "$(uname)" == "Darwin" ]; then
     ln -sfv \$DOTFILES_DIR/vim/.vimrc-darwin ~/.vimrc
 else
