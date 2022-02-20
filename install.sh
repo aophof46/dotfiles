@@ -16,15 +16,16 @@ ln -sfv "$DOTFILES_DIR/files/.profile" ~
 ln -sfv "$DOTFILES_DIR/files/.screenrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+if [ "$(uname)" == "Darwin" ]; then
+    ln -sfv "$DOTFILES_DIR/vim/.vimrc-darwin" "~/.vimrc"
+else
+    ln -sfv "$DOTFILES_DIR/vim/.vimrc-linux" "~/.vimrc"
+fi
 
 
 # Package managers & packages
-
-# . "$DOTFILES_DIR/install/brew.sh"
-
 if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
-    ln -sfv "$DOTFILES_DIR/vim/.vimrc-darwin" "~/.vimrc"
 elif [ "$(uname)" == "Linux" ] && [ -e /usr/bin/apt ]; then
     . "$DOTFILES_DIR/install/apt.sh"
 fi
