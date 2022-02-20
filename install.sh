@@ -8,6 +8,8 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 
+echo $DOTFILES_DIR
+
 # Make utilities available
 PATH="$DOTFILES_DIR/bin:$PATH"
 
