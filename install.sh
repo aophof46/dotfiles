@@ -12,10 +12,10 @@ DOTFILES_EXTRA_DIR="$HOME/.extra"
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Symlinks
-ln -sfv "$DOTFILES_DIR/files/.profile" ~
-ln -sfv "$DOTFILES_DIR/files/.screenrc" ~
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sfv "$DOTFILES_DIR/files/.profile" "~/.profile"
+ln -sfv "$DOTFILES_DIR/files/.screenrc" "~/.screenrc"
+ln -sfv "$DOTFILES_DIR/git/.gitconfig" "~/.gitconfig"
+ln -sfv "$DOTFILES_DIR/git/.gitignore_global" "~/.gitignore_global"
 if [ "$(uname)" == "Darwin" ]; then
     ln -sfv "$DOTFILES_DIR/vim/.vimrc-darwin" "~/.vimrc"
 else
