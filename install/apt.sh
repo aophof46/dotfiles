@@ -10,4 +10,4 @@ apps=(
 
 #brew install "${casks[@]}" --cask
 
-sudo apt-get install "${apps[@]}"
+sudo apt-get install "${apps[@]}" -y
