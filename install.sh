@@ -24,6 +24,6 @@ ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 
 if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
-elif [ "$(uname)" == "Linux" ] && [-e /usr/bin/apt ]; then
+elif [ "$(uname)" == "Linux" ] && [ -e /usr/bin/apt ]; then
     echo "apt found"
 fi
