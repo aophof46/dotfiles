@@ -31,7 +31,6 @@ apps=(
     screen
     slack
     spotify
-    sublime-text2
     ultimaker-cura
     visual-studio-code
     vlc
