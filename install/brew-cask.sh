@@ -1,15 +1,19 @@
-# Install Homebrew
-
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Use ZSH shell
-chsh -s /bin/zsh
+if [ "$(echo $SHELL)" != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+fi
 
-if [ "$(echo $SHELL)" == "/bin/zsh" ]; then
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi   
+if [ ! -f "/opt/homebrew/bin/brew" ]; then
+    # Install Homebrew
+
+    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    if [ "$(echo $SHELL)" == "/bin/zsh" ]; then
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi 
+fi
 
 
 brew update
