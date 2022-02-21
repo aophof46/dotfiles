@@ -27,7 +27,6 @@ apps=(
     htop
     iterm2
     lastpass
-    mediahuman-audio-converter
     powershell
     screen
     slack
