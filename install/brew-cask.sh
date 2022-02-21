@@ -43,7 +43,7 @@ apps=(
     zoom
 )    
 
-brew install "${apps[@]}" --cask
+brew install "${apps[@]}"
 
 
 # Git comes with diff-highlight, but isn't in the PATH
