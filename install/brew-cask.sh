@@ -51,7 +51,7 @@ casks=(
 
 brew install "${apps[@]}"
 
-brew install "${casks[@]}" --casks
+#brew install "${casks[@]}" --casks
 
 # Git comes with diff-highlight, but isn't in the PATH
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
