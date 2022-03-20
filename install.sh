@@ -31,4 +31,7 @@ if [ "$(uname)" == "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
 elif [ "$(uname)" == "Linux" ] && [ -e /usr/bin/apt ]; then
     . "$DOTFILES_DIR/install/apt.sh"
+elif ["$(uname)" == "Linux" ] && [ -e /usr/bin/yum ]; then
+    . "$DOTFILES_DIR/install/yum.sh"
 fi
+
