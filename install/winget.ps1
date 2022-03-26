@@ -8,7 +8,8 @@ $apps = @(
 "notepad++.notepad++",
 "Git.Git",
 "Github.Desktop",
-"Logitech.UnifyingSoftware"
+"Logitech.UnifyingSoftware",
+"Ultimaker.Cura"
 )
 
 foreach($app in $apps) {
