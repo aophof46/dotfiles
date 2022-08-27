@@ -2,7 +2,8 @@
 
 # Install packages
 apps=(
-  screen
+#  screen
+  tmux
 )    
 
 sudo yum install "${apps[@]}" -y
