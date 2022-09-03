@@ -1,6 +1,8 @@
 $apps = @(
 "7zip.7zip",
 "balena.etcher",
+"BraveSoftware.BraveBrowser",
+"logmein.lastpass",
 "microsoft.windowsterminal",
 "Microsoft.VisualStudioCode",
 "Microsoft.BingWallpaper",
