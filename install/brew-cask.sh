@@ -9,10 +9,9 @@ if [ ! -f "/opt/homebrew/bin/brew" ]; then
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    if [ "$(echo $SHELL)" == "/bin/zsh" ]; then
-        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi 
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.profile
+      eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 

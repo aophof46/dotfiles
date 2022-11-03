@@ -60,3 +60,4 @@ export DOTFILES_DIR
 
 
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
