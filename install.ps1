@@ -66,5 +66,5 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Cabin
 
 # Install packages
 if($PSScriptRoot) {
-& $PSScriptRoot + "\install\winget.ps1"
+& $($PSScriptRoot + "\install\winget.ps1")
 } 
