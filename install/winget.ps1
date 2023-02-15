@@ -24,6 +24,7 @@ function Test-RegistryValue {
 $apps = @(
 "7zip.7zip",
 "balena.etcher",
+"Bitwarden.Bitwarden",
 "BraveSoftware.BraveBrowser",
 "greenshot.greenshot",
 "logmein.lastpass",
@@ -31,6 +32,7 @@ $apps = @(
 "Microsoft.VisualStudioCode",
 "Microsoft.BingWallpaper",
 "valve.steam",
+"slacktechnologies.slack",
 "Spotify.Spotify",
 "notepad++.notepad++",
 "Git.Git",
@@ -65,17 +67,42 @@ if($DomainConnected -and !$WorkgroupConnected) {
     $registryValueData = '2'
     $registryType = "DWORD"
 
-    if(Test-RegistryValue -Path $registryPath -Value $registryValueName) {
-        write-host "Setting registry value"
-        Set-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -Force
+    if(!(Test-Path $registryPath)) {
+        New-Item -Path $registryPath
     }
-    else {
-        write-host "creating registry value"
-        New-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -PropertyType $registryType -Force
+
+    if(Test-Path $registryPath) {
+        if(Test-RegistryValue -Path $registryPath -Value $registryValueName) {
+            write-host "Setting registry value"
+            Set-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -Force
+        }
+        else {
+            write-host "creating registry value"
+            New-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -PropertyType $registryType -Force
+        }
+    }
+
+    # Check reg key value to avoid WSUS error
+    $registryPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"
+    $registryValueName = "UseWUServer"
+    $registryValueData = '1'
+    $registryType = "DWORD"
+
+    if(Test-Path $registryPath) {
+        if(Test-RegistryValue -Path $registryPath -Value $registryValueName) {
+            if((Get-ItemPropertyValue -Path $registryPath -Name $registryValueName) -eq $registryValueData) {
+                $UseWUServer = $true
+                Set-ItemProperty -Path $registryPath -Name $registryValueName -Value "0" -Force
+                Get-Service wuauserv | Restart-Service
+            }
+        }
     }
 
     write-host "Install RSAT" -BackgroundColor Green -ForegroundColor Black
     Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
 
-
+    if($UseWUServer) {
+        Set-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -Force
+        Get-Service wuauserv | Restart-Service   
+    }
 }
