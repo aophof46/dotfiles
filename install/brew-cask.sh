@@ -30,6 +30,7 @@ apps=(
     htop
     iterm2
     lastpass
+    nmap
     powershell
     screen
     slack
