@@ -3,6 +3,7 @@
 .DS_Store
 .idea
 .vscode
+.env
 node_modules
 bower_components
 npm-debug.log
