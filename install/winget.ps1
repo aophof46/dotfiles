@@ -26,6 +26,7 @@ $apps = @(
 "balena.etcher",
 "Bitwarden.Bitwarden",
 "BraveSoftware.BraveBrowser",
+"EpicGames.EpicGamesLauncher",
 "greenshot.greenshot",
 "logmein.lastpass",
 "microsoft.windowsterminal",
