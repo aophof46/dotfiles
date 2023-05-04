@@ -62,7 +62,11 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explo
 # Explorer: Show path in title bar: Hide: 0, Show: 1
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
 
-
+# Check if Git exists and configure appropriately
+if(Get-Command "git.exe" -ErrorAction SilentlyContinue) {
+	git config --global user.email "adam@aophof46.net"
+      git config --global user.name "aophof46"
+}
 
 # Install packages
 if($PSScriptRoot) {
