@@ -64,9 +64,10 @@ $commonapps = @(
 )
 
 # Install common apps
+Write-Host "Installing apps for use everywhere"
 foreach($app in $apps | where {$_.use -eq "all"}) {
     write-host "Installing: $($app.name)"
-    #& winget install $($app.id)
+    & winget install $($app.id)
 }
 
 
@@ -129,6 +130,7 @@ if($DomainConnected -and !$WorkgroupConnected) {
 }
 else {
     # Install home apps
+    Write-Host "Installing apps for home use"
     foreach($app in $apps | where {$_.use -eq "home"}) {
         write-host "Installing: $($app.name)"
         & winget install $($app.id)
