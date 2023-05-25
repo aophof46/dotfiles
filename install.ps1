@@ -64,11 +64,11 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Cabin
 
 # Check if Git exists and configure appropriately
 if(Get-Command "git.exe" -ErrorAction SilentlyContinue) {
-	git config --global user.email "adam@aophof46.net"
-      git config --global user.name "aophof46"
+    git config --global user.email "adam@aophof46.net"
+    git config --global user.name "aophof46"
 }
 
 # Install packages
 if($PSScriptRoot) {
-& $($PSScriptRoot + "\install\winget.ps1")
+    & $($PSScriptRoot + "\install\winget.ps1")
 } 
