@@ -25,13 +25,19 @@ apps=(
     android-platform-tools
     arduino
     balenaetcher
+    bitwarden
     discord
     git
+    homebrew/cask/basictex
     htop
     iterm2
     lastpass
+    librsvg
+#    logitech-options
     nmap
+    pandoc
     powershell
+    python
     screen
     slack
     spotify
