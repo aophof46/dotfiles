@@ -25,6 +25,7 @@ $apps = @(
     [pscustomobject]@{id="EpicGames.EpicGamesLauncher";use="home";name="Epic Games Launcher"},
     [pscustomobject]@{id="gog.galaxy";use="home";name="GOG Galaxy"},
     [pscustomobject]@{id="greenshot.greenshot";use="all";name="Greenshot"},
+    [pscustomobject]@{id="IrfanSkiljan.IrfanView";use="all";name="IrfanView"},
     [pscustomobject]@{id="logmein.lastpass";use="all";name="Lastpass"},
     [pscustomobject]@{id="microsoft.windowsterminal";use="all";name="Microsoft Windows Terminal"},
     [pscustomobject]@{id="Microsoft.VisualStudioCode";use="all";name="Microsoft VSCode"},
