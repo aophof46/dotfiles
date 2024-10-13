@@ -15,8 +15,8 @@ if [ ! -f "/opt/homebrew/bin/brew" ]; then
 fi
 
 
-brew update
-brew upgrade
+/opt/homebrew/bin/brew update
+/opt/homebrew/bin/brew upgrade
 
 # Install packages
 apps=(
@@ -55,7 +55,7 @@ casks=(
   # mediahuman-audio-converter # doesn't exist anymore?
 )
 
-brew install "${apps[@]}"
+/opt/homebrew/bin/brew install "${apps[@]}"
 
 #brew install "${casks[@]}" --casks
 
