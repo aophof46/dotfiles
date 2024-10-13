@@ -31,7 +31,7 @@ apps=(
     homebrew/cask/basictex
     htop
     iterm2
-    lastpass
+#    lastpass
     librsvg
 #    logitech-options
     nmap
