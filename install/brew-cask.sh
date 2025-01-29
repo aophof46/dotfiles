@@ -23,7 +23,7 @@ apps=(
     aerial
     android-studio
     android-platform-tools
-    arduino
+#    arduino
     balenaetcher
     bitwarden
     discord
@@ -60,4 +60,4 @@ casks=(
 #brew install "${casks[@]}" --casks
 
 # Git comes with diff-highlight, but isn't in the PATH
-sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
+sudo ln -sf "$(/opt/homebrew/bin/brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
