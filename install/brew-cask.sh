@@ -14,6 +14,8 @@ if [ ! -f "/opt/homebrew/bin/brew" ]; then
       eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# This adds the official HashiCorp Homebrew repository, which contains the Terraform package.
+/opt/homebrew/bin/brew tap hashicorp/tap
 
 /opt/homebrew/bin/brew update
 /opt/homebrew/bin/brew upgrade
@@ -23,10 +25,12 @@ apps=(
     aerial
     android-studio
     android-platform-tools
+    ansible
 #    arduino
     balenaetcher
     bitwarden
     discord
+    ffmpeg
     git
     homebrew/cask/basictex
     htop
@@ -41,6 +45,7 @@ apps=(
     screen
     slack
     spotify
+    hashicorp/tap/terraform
     ultimaker-cura
     visual-studio-code
     vlc
@@ -48,6 +53,7 @@ apps=(
     vysor
     webex
     wireshark
+    yt-dlp
     zoom
 )
 
