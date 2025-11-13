@@ -20,6 +20,7 @@ function Test-RegistryValue {
 $apps = @(
     [pscustomobject]@{id="7zip.7zip";use="all";name="7zip"},
     [pscustomobject]@{id="balena.etcher";use="all";name="Balena Etcher"},
+    [pscustomobject]@{id="nirsoft.bluescreenview";use="all";name="Nirsoft BluescreenView"},
     [pscustomobject]@{id="Bitwarden.Bitwarden";use="all";name="Bitwarden"},
     [pscustomobject]@{id="Brave.Brave";use="all";name="Brave Browser"},
     [pscustomobject]@{id="EpicGames.EpicGamesLauncher";use="home";name="Epic Games Launcher"},
