@@ -17,35 +17,59 @@ function Test-RegistryValue {
     }
 }
 
-
-
-
-
 $apps = @(
-"7zip.7zip",
-"balena.etcher",
-"Bitwarden.Bitwarden",
-"BraveSoftware.BraveBrowser",
-"greenshot.greenshot",
-"logmein.lastpass",
-"microsoft.windowsterminal",
-"Microsoft.VisualStudioCode",
-"Microsoft.BingWallpaper",
-"valve.steam",
-"slacktechnologies.slack",
-"Spotify.Spotify",
-"notepad++.notepad++",
-"Git.Git",
-"Github.Desktop",
-"Logitech.UnifyingSoftware",
-"Ultimaker.Cura"
+    [pscustomobject]@{id="7zip.7zip";use="all";name="7zip"},
+    [pscustomobject]@{id="balena.etcher";use="all";name="Balena Etcher"},
+    [pscustomobject]@{id="nirsoft.bluescreenview";use="all";name="Nirsoft BluescreenView"},
+    [pscustomobject]@{id="Bitwarden.Bitwarden";use="all";name="Bitwarden"},
+    [pscustomobject]@{id="Brave.Brave";use="all";name="Brave Browser"},
+    [pscustomobject]@{id="EpicGames.EpicGamesLauncher";use="home";name="Epic Games Launcher"},
+    [pscustomobject]@{id="gog.galaxy";use="home";name="GOG Galaxy"},
+    [pscustomobject]@{id="greenshot.greenshot";use="all";name="Greenshot"},
+    [pscustomobject]@{id="IrfanSkiljan.IrfanView";use="all";name="IrfanView"},
+#    [pscustomobject]@{id="logmein.lastpass";use="all";name="Lastpass"},
+    [pscustomobject]@{id="microsoft.windowsterminal";use="all";name="Microsoft Windows Terminal"},
+    [pscustomobject]@{id="Microsoft.VisualStudioCode";use="all";name="Microsoft VSCode"},
+    [pscustomobject]@{id="Microsoft.BingWallpaper";use="all";name="Microsoft Bing Wallpaper"},
+    [pscustomobject]@{id="Mozilla.Firefox";use="all";name="Mozilla Firefox"},
+    [pscustomobject]@{id="valve.steam";use="home";name="Valve Steam"},
+    [pscustomobject]@{id="slacktechnologies.slack";use="all";name="Slack"},
+    [pscustomobject]@{id="Spotify.Spotify";use="all";name="Spotify"},
+    [pscustomobject]@{id="notepad++.notepad++";use="all";name="Notepad++"},
+    [pscustomobject]@{id="Git.Git";use="all";name="Git"},
+    [pscustomobject]@{id="Github.Desktop";use="all";name="Github Desktop"},
+    [pscustomobject]@{id="Logitech.UnifyingSoftware";use="all";name="Logitech Unifying Software"},
+    [pscustomobject]@{id="Ultimaker.Cura";use="home";name="Ultimaker Cura"}
 )
 
-foreach($app in $apps) {
 
-write-host "Installing: $app"
-& winget install $app
+$commonapps = @(
+    "7zip.7zip",
+    "balena.etcher",
+    "Bitwarden.Bitwarden",
+    "Brave.Brave",
+    "EpicGames.EpicGamesLauncher",
+    "greenshot.greenshot",
+#    "logmein.lastpass",
+    "microsoft.windowsterminal",
+    "Microsoft.VisualStudioCode",
+    "Microsoft.BingWallpaper",
+    "Mozilla.Firefox",
+    "valve.steam",
+    "slacktechnologies.slack",
+    "Spotify.Spotify",
+    "notepad++.notepad++",
+    "Git.Git",
+    "Github.Desktop",
+    "Logitech.UnifyingSoftware",
+    "Ultimaker.Cura"
+)
 
+# Install common apps
+Write-Host "Installing apps for use everywhere"
+foreach($app in $apps | where {$_.use -eq "all"}) {
+    write-host "Installing: $($app.name)"
+    & winget install $($app.id)
 }
 
 
@@ -106,5 +130,13 @@ if($DomainConnected -and !$WorkgroupConnected) {
     if($UseWUServer) {
         Set-ItemProperty -Path $registryPath -Name $registryValueName -Value $registryValueData -Force
         Get-Service wuauserv | Restart-Service   
+    }
+}
+else {
+    # Install home apps
+    Write-Host "Installing apps for home use"
+    foreach($app in $apps | where {$_.use -eq "home"}) {
+        write-host "Installing: $($app.name)"
+        & winget install $($app.id)
     }
 }

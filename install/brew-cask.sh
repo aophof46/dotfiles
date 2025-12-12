@@ -14,27 +14,43 @@ if [ ! -f "/opt/homebrew/bin/brew" ]; then
       eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# This adds the official HashiCorp Homebrew repository, which contains the Terraform package.
+/opt/homebrew/bin/brew tap hashicorp/tap
 
-brew update
-brew upgrade
+/opt/homebrew/bin/brew update
+/opt/homebrew/bin/brew upgrade
 
 # Install packages
 apps=(
     aerial
+<<<<<<< HEAD
+#    android-studio
+#    android-platform-tools
+=======
     android-studio
     android-platform-tools
-    arduino
+    ansible
+>>>>>>> c9f25c7a928fe223a7b80b18bab00aae6765e27a
+#    arduino
     balenaetcher
+    bitwarden
     discord
+    ffmpeg
     git
+    homebrew/cask/basictex
     htop
     iterm2
-    lastpass
+#    lastpass
+    librsvg
+#    logitech-options
     nmap
+    pandoc
     powershell
+    python
     screen
     slack
     spotify
+    hashicorp/tap/terraform
     ultimaker-cura
     visual-studio-code
     vlc
@@ -42,6 +58,7 @@ apps=(
     vysor
     webex
     wireshark
+    yt-dlp
     zoom
 )
 
@@ -49,9 +66,9 @@ casks=(
   # mediahuman-audio-converter # doesn't exist anymore?
 )
 
-brew install "${apps[@]}"
+/opt/homebrew/bin/brew install "${apps[@]}"
 
 #brew install "${casks[@]}" --casks
 
 # Git comes with diff-highlight, but isn't in the PATH
-sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
+sudo ln -sf "$(/opt/homebrew/bin/brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight

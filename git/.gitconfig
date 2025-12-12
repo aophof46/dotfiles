@@ -4,3 +4,6 @@
 
 [github]
   user = aophof46
+
+[core]
+    excludesfile = ~/.gitignore_global

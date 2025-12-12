@@ -6,4 +6,5 @@
 .env
 node_modules
 bower_components
-npm-debug.log
+*.log
+*.tmp
