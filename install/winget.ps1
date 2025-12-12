@@ -93,7 +93,9 @@ if($DomainConnected -and !$WorkgroupConnected) {
             if((Get-ItemPropertyValue -Path $registryPath -Name $registryValueName) -eq $registryValueData) {
                 $UseWUServer = $true
                 Set-ItemProperty -Path $registryPath -Name $registryValueName -Value "0" -Force
-                Get-Service wuauserv | Restart-Service
+                Get-Service wuauserv | Stop-Service
+                start-sleep 5
+                Get-Service wuauserv | Start-Service
             }
         }
     }
