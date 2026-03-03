@@ -15,6 +15,8 @@ echo $DOTFILES_DIR
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Symlinks
+ln -sfv $DOTFILES_DIR/files/.zshrc ~
+ln -sfv $DOTFILES_DIR/files/.zprofile ~
 ln -sfv $DOTFILES_DIR/files/.profile ~
 ln -sfv $DOTFILES_DIR/files/.screenrc ~
 ln -sfv $DOTFILES_DIR/git/.gitconfig ~
@@ -28,7 +30,7 @@ fi
 
 # Package managers & packages
 if [ "$(uname)" == "Darwin" ]; then
-    . "$DOTFILES_DIR/install/macos_rosetta.sh"
+#    . "$DOTFILES_DIR/install/macos_rosetta.sh"
     . "$DOTFILES_DIR/install/brew-cask.sh"
 elif [ "$(uname)" == "Linux" ] && [ -e /usr/bin/apt ]; then
     . "$DOTFILES_DIR/install/apt.sh"

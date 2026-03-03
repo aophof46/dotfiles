@@ -23,39 +23,37 @@ fi
 # Install packages
 apps=(
     aerial
-<<<<<<< HEAD
-#    android-studio
-#    android-platform-tools
-=======
     android-studio
-    android-platform-tools
+#    android-platform-tools
+    arduino
     ansible
->>>>>>> c9f25c7a928fe223a7b80b18bab00aae6765e27a
-#    arduino
     balenaetcher
     bitwarden
+    chafa
     discord
     ffmpeg
     git
+    gum
     homebrew/cask/basictex
     htop
     iterm2
-#    lastpass
     librsvg
-#    logitech-options
     nmap
+    obsidian
     pandoc
     powershell
     python
     screen
     slack
     spotify
+    tree
     hashicorp/tap/terraform
     ultimaker-cura
     visual-studio-code
     vlc
     vmware-horizon-client
     vysor
+    watch
     webex
     wireshark
     yt-dlp
