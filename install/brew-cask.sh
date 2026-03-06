@@ -25,7 +25,7 @@ apps=(
     aerial
     android-studio
 #    android-platform-tools
-    arduino
+#    arduino
     ansible
     balenaetcher
     bitwarden
@@ -62,6 +62,7 @@ apps=(
 
 casks=(
   # mediahuman-audio-converter # doesn't exist anymore?
+  arduino-ide
 )
 
 /opt/homebrew/bin/brew install "${apps[@]}"
