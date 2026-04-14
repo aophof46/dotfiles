@@ -27,11 +27,14 @@ apps=(
 #    android-platform-tools
 #    arduino
     ansible
+    apfel
     balenaetcher
     bitwarden
     chafa
     discord
     ffmpeg
+    geekbench
+    geekbench-ai
     git
     gum
     homebrew/cask/basictex
