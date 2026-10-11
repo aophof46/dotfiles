@@ -41,6 +41,7 @@ apps=(
     htop
     iterm2
     librsvg
+    mole # https://github.com/tw93/Mole
     nmap
     obsidian
     pandoc
